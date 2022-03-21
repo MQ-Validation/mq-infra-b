@@ -52,7 +52,7 @@ spec:
   template:
     pod:
       containers:
-      - name: qmgr
+      - name: {{ .Values.template.pod.containers[0].name }}
         {{- if eq .Values.security false }}
         env:
         - name: MQSNOAUT
